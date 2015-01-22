@@ -1,0 +1,11 @@
+Package: biorxiv
+Type: Package
+Title: Search and download data from the biorxiv.org preprint server
+Version: 0.1.0
+Date: 2015-01-20
+Author: Edmund Hart <edmund.m.hart@gmail.com>
+Maintainer: Edmund Hart <edmund.m.hart@gmail.com>
+LazyLoad: yes
+LazyData: yes
+Description: <longer description here>
+License: MIT + file LICENSE
