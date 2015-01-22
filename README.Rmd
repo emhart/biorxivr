@@ -2,3 +2,44 @@
 
 ##### *Quickly search and get details about papers on the pre-print server [biorxiv.org](http://www.biorxiv.org) in R*
 
+**Quick Start**
+
+Currently the package is only available on github and installable via `devtools`
+```{r install}
+library(devtools)
+install_github("emhart/biorxiv")
+```
+
+**Searching**
+
+The search functionality comes from the general search form interface, so the search may not be at the granularity you desire without further parsing of results.
+
+```{r searching}
+bxCC <- bx_search("climate change",limit = 10)
+summary(bxCC)
+```
+
+This will return a search results object that has the URL's for your search results.  If you want to get details about all your search results we can extract basic features like DOI, Authors, e-mails, title, abstract text, date as well as metrics on views and downloads.
+
+```{r get details}
+bxCCDetails <-  bx_extract(bxCC)
+
+bxCCDetails[[1]]
+
+```
+
+There's also some basic plotting functionality that will allow you plot views and downloads
+
+Plot views
+```{r plotting views}
+plot(bxCCDetails[[1]],type="abs")
+
+```
+
+Plot downloads
+```{r plotting dl}
+plot(bxCCDetails[[1]],type="dl")
+
+```
+
+

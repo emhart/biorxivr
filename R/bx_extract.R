@@ -36,12 +36,12 @@ bx_extract_single <- function(bxso_url){
   paper <- list()
   authors <- list()
 authors$names <- unname(unlist(meta.data[which(nlist == "DC.Contributor")]))
-authors$email <- unlist(meta.data[which(nlist == "citation_author_email")])
-  paper$title <- unlist(meta.data[which(nlist == "DC.Title")])
-  paper$abstract <- unlist(meta.data[which(nlist == "DC.Description")])
-  paper$date <- unlist(meta.data[which(nlist == "DC.Date")])
-  paper$DOI <- unlist(meta.data[which(nlist == "DC.Identifier")])
-  paper$fulltext_url <- unlist(meta.data[which(nlist == "citation_pdf_url")])
+authors$email <- unname(unlist(meta.data[which(nlist == "citation_author_email")]))
+  paper$title <- unname(unlist(meta.data[which(nlist == "DC.Title")]))
+  paper$abstract <- unname(unlist(meta.data[which(nlist == "DC.Description")]))
+  paper$date <- unname(unlist(meta.data[which(nlist == "DC.Date")]))
+  paper$DOI <- unname(unlist(meta.data[which(nlist == "DC.Identifier")]))
+  paper$fulltext_url <- unname(unlist(meta.data[which(nlist == "citation_pdf_url")]))
 
   metricRes <- htmlParse(paste(bxso_url,".article-metrics"))
   ## This returns a value for each element and we'll convert it to a matrix

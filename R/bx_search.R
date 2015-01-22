@@ -73,5 +73,5 @@ bx_search <- function(query, limit = 10){
 summary.biorxiv_search <- function(bxso){
   cat("Search term:", bxso$query,"\n")
   cat("Number of results returned:",bxso$limit,"\n")
-  cat("Number of results found:",bxso$maxRes,"\n")
+  cat("Number of results found:",bxso$found,"\n")
 }
