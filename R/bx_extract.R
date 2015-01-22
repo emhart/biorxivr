@@ -57,6 +57,9 @@ metrics[,1] <- do.call(c,lapply(strsplit(as.character(metrics[,1])," "),function
 return(structure(list(authors = authors, paper = paper, metrics = metrics),class = "biorxiv_paper"))
 }
 
+
+#' plot metric details for a paper
+#' @export
 plot.biorxiv_paper <- function(bxp,type="abs"){
   if(type=="abs"){
     plot(bxp$metrics$date,bxp$metrics$Abstract,main = "Number of Abstract views",xlab="Date",ylab="Number of views")

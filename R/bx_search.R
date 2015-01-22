@@ -69,7 +69,9 @@ bx_search <- function(query, limit = 10){
   return(bioX)
   
 }
-
+#' Summary of search results
+#' @export
+#' 
 summary.biorxiv_search <- function(bxso){
   cat("Search term:", bxso$query,"\n")
   cat("Number of results returned:",bxso$limit,"\n")

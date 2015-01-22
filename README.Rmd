@@ -8,6 +8,7 @@ Currently the package is only available on github and installable via `devtools`
 ```{r install}
 library(devtools)
 install_github("emhart/biorxiv")
+library(biorxiv)
 ```
 
 **Searching**
