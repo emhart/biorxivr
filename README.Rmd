@@ -5,7 +5,7 @@
 **Quick Start**
 
 Currently the package is only available on github and installable via `devtools`
-```{r install}
+```{r install,message=FALSE,warning=FALSE}
 library(devtools)
 install_github("emhart/biorxiv")
 library(biorxiv)
