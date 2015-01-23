@@ -2,6 +2,7 @@
 
 S3method(plot,biorxiv_paper)
 S3method(summary,biorxiv_search)
+export(bx_download)
 export(bx_extract)
 export(bx_extract_single)
 export(bx_search)

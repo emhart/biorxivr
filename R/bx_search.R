@@ -65,7 +65,7 @@ bx_search <- function(query, limit = 10){
                 paste(m1[which(m1 =="early"):length(m1)],collapse="/")}
                 )
   
-  bioX <- structure(list(URL = ftURL,ID = IDs, found = maxRes,query=query,limit=limit), class = "biorxiv_search")
+  bioX <- structure(list(URL = ftURL,ID = unname(IDs), found = maxRes,query=query,limit=limit), class = "biorxiv_search")
   return(bioX)
   
 }
