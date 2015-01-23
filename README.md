@@ -25,7 +25,7 @@ summary(bxCC)
 ```
 ## Search term: climate change 
 ## Number of results returned: 10 
-## Number of results found: 235
+## Number of results found: 236
 ```
 
 This will return a search results object that has the URL's for your search results.  If you want to get details about all your search results we can extract basic features like DOI, Authors, e-mails, title, abstract text, date as well as metrics on views and downloads.
@@ -34,48 +34,38 @@ This will return a search results object that has the URL's for your search resu
 ```r
 bxCCDetails <-  bx_extract(bxCC)
 
-bxCCDetails[[1]]
+bxCCDetails[[3]]
 ```
 
 ```
 ## $authors
 ## $authors$names
-## [1] "Edmund Hart"      "Nicholas Gotelli"
+## [1] "Ben Phillips"
+## 
+## $authors$email
+## [1] "phillipsb@unimelb.edu.au"
 ## 
 ## 
 ## $paper
 ## $paper$title
-## [1] "Climate change triggers morphological and life-history evolution in response to predators"
+## [1] "Evolutionary processes make invasion speed difficult to predict"
 ## 
 ## $paper$abstract
-## [1] "Although climate change is expected to reorganize entire communities, this restructuring might reflect either direct ecological or evolutionary responses to abiotic conditions or indirect effects mediated through altered species interactions. We tested the hypothesis that changes in trophic interaction strength due to altered predator abundance have a cascading evolutionary response in a prey species (Daphnia pulex). Using a multiyear / multigenerational field experiment, we manipulated 12 open aquatic mesocosms to simulate hydrological conditions under climate change. After a three-year press manipulation, we collected Daphnia pulex from each pond and raised them in a common garden. Using quantitative genetic methods, we measured a series of quantitative traits every other day on 108 individuals for eight weeks. There was a significant decrease in tail spine length and population growth rate in groups exposed to the most extreme future climate scenarios. Structural equation models demonstrated that trait changes were best explained as an indirect effect of climate change treatments mediated through changes in predator abundance. Our results suggest climate change can trigger a cascade of ecological and evolutionary forces by reducing predator density, which in turn acts as a selective force leading to evolutionary change in prey morphology and life history."
+## [1] "A capacity to predict the spread rate of populations is critical for understanding the impacts of climate change and invasive species. Despite sophisticated theory describing how populations spread, the prediction of spread rate remains a formidable challenge. As well as the inherent stochasticity in the spread process, spreading populations are subject to strong evolutionary forces (operating on dispersal and reproductive rates) that can cause accelerating spread. Despite these strong evolutionary forces, serial founder events and drift on the expanding range edge mean that evolutionary trajectories in the invasion vanguard may be highly stochastic. Here I develop a model of spatial spread in continuous space that incorporates evolution of continuous traits under a quantitative genetic model of inheritance. I use this model to investigate the potential role of evolution on the variation in spread rate between replicate model realisations. Models incorporating evolution exhibited more than four times the variance in spread rate across replicate invasions compared with non-evolving scenarios. Results suggest that the majority of this increase in variation is driven by evolutionary stochasticity on the invasion front rather than initial founder events: in many cases evolutionary stochasticity on the invasion front contributed more than 90% of the variance in spread rate over 30 generations. Our uncertainty around predicted spread rates -- whether for invasive species or those shifting under climate change -- may be much larger than we expect when the spreading population contains heritable variation in rates of dispersal and reproduction."
 ## 
 ## $paper$date
-## [1] "2013-12-10"
+## [1] "2015-01-11"
 ## 
 ## $paper$DOI
-## [1] "10.1101/001263"
+## [1] "10.1101/013680"
 ## 
 ## $paper$fulltext_url
-## [1] "http://www.biorxiv.org/content/biorxiv/early/2013/12/05/001263.full.pdf"
+## [1] "http://www.biorxiv.org/content/biorxiv/early/2015/01/11/013680.full.pdf"
 ## 
 ## 
 ## $metrics
-##          date Abstract PDF
-## 1  2013-12-01      146  35
-## 2  2014-01-01       34  30
-## 3  2014-02-01       25  17
-## 4  2014-03-01       34   2
-## 5  2014-04-01       17  30
-## 6  2014-05-01       36   5
-## 7  2014-06-01       22   9
-## 8  2014-07-01       56  15
-## 9  2014-08-01       35   8
-## 10 2014-09-01       64  11
-## 11 2014-10-01       43  20
-## 12 2014-11-01       24  12
-## 13 2014-12-01       25  14
-## 14 2015-01-01        9   2
+##         date Abstract PDF
+## 1 2015-01-01      230  43
 ## 
 ## attr(,"class")
 ## [1] "biorxiv_paper"
@@ -86,7 +76,7 @@ There's also some basic plotting functionality that will allow you plot views an
 Plot views
 
 ```r
-plot(bxCCDetails[[1]],type="abs")
+plot(bxCCDetails[[3]],type="abs")
 ```
 
 ![plot of chunk plotting views](figure/plotting views-1.png) 
@@ -94,9 +84,16 @@ plot(bxCCDetails[[1]],type="abs")
 Plot downloads
 
 ```r
-plot(bxCCDetails[[1]],type="dl")
+plot(bxCCDetails[[3]],type="dl")
 ```
 
 ![plot of chunk plotting dl](figure/plotting dl-1.png) 
+
+Finally, you can easily download PDF's from all your search results.
+
+
+```r
+bx_download(bxCC,"~/biorxiv_pdfs")
+```
 
 

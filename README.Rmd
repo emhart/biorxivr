@@ -25,7 +25,7 @@ This will return a search results object that has the URL's for your search resu
 ```{r get details}
 bxCCDetails <-  bx_extract(bxCC)
 
-bxCCDetails[[1]]
+bxCCDetails[[3]]
 
 ```
 
@@ -33,13 +33,20 @@ There's also some basic plotting functionality that will allow you plot views an
 
 Plot views
 ```{r plotting views}
-plot(bxCCDetails[[1]],type="abs")
+plot(bxCCDetails[[3]],type="abs")
 
 ```
 
 Plot downloads
 ```{r plotting dl}
-plot(bxCCDetails[[1]],type="dl")
+plot(bxCCDetails[[3]],type="dl")
+
+```
+
+Finally, you can easily download PDF's from all your search results.
+
+```{r dl,eval=FALSE}
+bx_download(bxCC,"~/biorxiv_pdfs")
 
 ```
 
