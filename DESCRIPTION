@@ -3,7 +3,8 @@ Type: Package
 Title: Search and Download Papers from the biorxiv.org Preprint Server
 Version: 0.1.0
 Date: 2015-01-20
-Author: Edmund Hart <edmund.m.hart@gmail.com>
+Authors@R: c(person("Edmund", "Hart", role = c("aut","cre"),
+    email = "edmund.m.hart@gmail.com"))
 Maintainer: Edmund Hart <edmund.m.hart@gmail.com>
 LazyLoad: yes
 LazyData: yes
@@ -11,4 +12,5 @@ Description: The biorxiv preprint server (http://www.biorxiv.org) is a website w
 License: MIT + file LICENSE
 Depends:
     XML
+Suggests: knitr
 VignetteBuilder: knitr

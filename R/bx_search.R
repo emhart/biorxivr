@@ -70,17 +70,23 @@ bx_search <- function(query, limit = 10){
   
 }
 #' Summary of search results
+#' @description create a summary of search results
+#' @param object the search object to create a summary of
+#' @param ... extra parameters to pass
 #' @export
 #' 
-summary.biorxiv_search <- function(object){
+summary.biorxiv_search <- function(object,...){
   class(object) <- "summary.bxso"
   return(object)
 }
 
 #'Print summary results
+#'@description print a summary of search results
+#'@param x the biorxiv search object to print
+#'@param ... extra parameters to the print function
 #'@export
 
-`print.summary.biorxiv_search` <- function(x){
+`print.summary.biorxiv_search` <- function(x,...){
 cat("Search term:", x$query,"\n")
 cat("Number of results returned:",x$limit,"\n")
 cat("Number of results found:",x$found,"\n")

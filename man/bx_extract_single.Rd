@@ -6,6 +6,9 @@
 \usage{
 bx_extract_single(bxso_url)
 }
+\arguments{
+\item{bxso_url}{the URL of a single biorxiv paper}
+}
 \value{
 a single S3 object with all the salient details about a paper
 }

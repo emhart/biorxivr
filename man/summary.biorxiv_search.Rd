@@ -4,9 +4,14 @@
 \alias{summary.biorxiv_search}
 \title{Summary of search results}
 \usage{
-\method{summary}{biorxiv_search}(object)
+\method{summary}{biorxiv_search}(object, ...)
+}
+\arguments{
+\item{object}{the search object to create a summary of}
+
+\item{...}{extra parameters to pass}
 }
 \description{
-Summary of search results
+create a summary of search results
 }
 

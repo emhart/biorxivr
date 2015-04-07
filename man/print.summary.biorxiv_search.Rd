@@ -4,9 +4,14 @@
 \alias{print.summary.biorxiv_search}
 \title{Print summary results}
 \usage{
-\method{print}{summary.biorxiv_search}(x)
+\method{print}{summary.biorxiv_search}(x, ...)
+}
+\arguments{
+\item{x}{the biorxiv search object to print}
+
+\item{...}{extra parameters to the print function}
 }
 \description{
-Print summary results
+print a summary of search results
 }
 

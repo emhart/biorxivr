@@ -4,9 +4,16 @@
 \alias{plot.biorxiv_paper}
 \title{plot metric details for a paper}
 \usage{
-\method{plot}{biorxiv_paper}(bxp, type = "abs")
+\method{plot}{biorxiv_paper}(x, type = "abs", ...)
+}
+\arguments{
+\item{x}{the paper to plot a summary of}
+
+\item{type}{the data to plot, 'abs' for abstract views, 'dl' for PDF downloads}
+
+\item{...}{extra parameters to pass}
 }
 \description{
-plot metric details for a paper
+plot a summary of the views a paper has had
 }
 

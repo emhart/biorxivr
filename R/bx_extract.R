@@ -24,6 +24,7 @@ bx_extract <- function(bxso){
 
 #'Extract data from a single record
 #'@description Generate an S3 object that represents a single paper
+#'@param bxso_url the URL of a single biorxiv paper
 #'@return a single S3 object with all the salient details about a paper
 #'@export
 
@@ -59,8 +60,13 @@ return(structure(list(authors = authors, paper = paper, metrics = metrics),class
 
 
 #' plot metric details for a paper
+#' @description plot a summary of the views a paper has had
+#' @param x the paper to plot a summary of
+#' @param type the data to plot, 'abs' for abstract views, 'dl' for PDF downloads
+#' @param ... extra parameters to pass
 #' @export
-plot.biorxiv_paper <- function(bxp,type="abs"){
+plot.biorxiv_paper <- function(x,type="abs",...){
+  bxp <- x
   if(type=="abs"){
     plot(bxp$metrics$date,bxp$metrics$Abstract,main = "Number of Abstract views",xlab="Date",ylab="Number of views")
     lines(bxp$metrics$date,bxp$metrics$Abstract)
