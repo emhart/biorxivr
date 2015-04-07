@@ -2,7 +2,7 @@
 #' @description Download PDF's of all the papers in your search results.
 #' @param bxso search results from bx_search()
 #' @param directory The location you want to download the PDF's to.
-#' @param create if true create the directory if it doesn't exist
+#' @param create TRUE or FALSE. If true create the directory if it doesn't exist
 #' @examples \dontrun{
 #' bxEco <- bx_search("ecology",limit=20) 
 #' bx_download(bxEco,"~/biorxivPDF)

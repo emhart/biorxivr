@@ -1,0 +1,52 @@
+---
+title: "Using biorxiv"
+author: "Edmund Hart"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Using biorxiv}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
+
+**Searching**
+
+The search functionality comes from the general search form interface, so the search may not be at the granularity you desire without further parsing of results.  This is the equivalent of the search box on the main landing page of http://biorxiv.org
+
+```{r searching}
+bxEco <- bx_search("Ecology",limit = 10)
+summary(bxEco)
+```
+
+This will return a search results object that has the URL's for your search results.  If you want to get details about all your search results we can extract basic features like DOI, Authors, e-mails, title, abstract text, date as well as metrics on views and downloads.
+
+```{r get details}
+bxEcoDetails <-  bx_extract(bxEco)
+
+bxEcoDetails[[1]]
+
+```
+
+There's also some basic plotting functionality that will allow you plot views and downloads
+
+Plot views the number of views an abstract.
+
+```{r plotting views,fig.align='center',fig.width=4,fig.height=4}
+plot(bxEcoDetails[[1]],type="abs")
+
+```
+
+Plot the number of PDF downloads.
+
+```{r plotting dl,fig.align='center',fig.width=4,fig.height=4}
+plot(bxEcoDetails[[1]],type="dl")
+
+```
+
+Finally, you can easily download PDF's from all your search results.
+
+```{r dl,eval=FALSE}
+
+bx_download(bxEco,"~/biorxiv_pdfs")
+
+```

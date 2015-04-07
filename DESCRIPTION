@@ -1,11 +1,14 @@
 Package: biorxiv
 Type: Package
-Title: Search and download data from the biorxiv.org preprint server
+Title: Search and Download Papers from the biorxiv.org Preprint Server
 Version: 0.1.0
 Date: 2015-01-20
 Author: Edmund Hart <edmund.m.hart@gmail.com>
 Maintainer: Edmund Hart <edmund.m.hart@gmail.com>
 LazyLoad: yes
 LazyData: yes
-Description: <longer description here>
+Description: The biorxiv preprint server (http://www.biorxiv.org) is a website where scientists can post preprints of biology.  It hosts raw text abstracts and pdf's of these papers. Users can search and download PDF's in bulk for text mining or other purposes. The text of abstracts is stored as raw text within R, and PDF's can easily be imported for textmining with packages like tm.
 License: MIT + file LICENSE
+Depends:
+    XML
+VignetteBuilder: knitr

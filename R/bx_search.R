@@ -1,4 +1,4 @@
-#'Search biorxiv.org
+  #'Search biorxiv.org
 #' @description return a list of URLS, IDS and number of results found from search of biorxiv.org
 #' @param query the terms to search for in biorxiv
 #' @param limit the number of results to return
@@ -72,8 +72,19 @@ bx_search <- function(query, limit = 10){
 #' Summary of search results
 #' @export
 #' 
-summary.biorxiv_search <- function(bxso){
-  cat("Search term:", bxso$query,"\n")
-  cat("Number of results returned:",bxso$limit,"\n")
-  cat("Number of results found:",bxso$found,"\n")
+summary.biorxiv_search <- function(object){
+  class(object) <- "summary.bxso"
+  return(object)
 }
+
+#'Print summary results
+#'@export
+
+`print.summary.biorxiv_search` <- function(x){
+cat("Search term:", x$query,"\n")
+cat("Number of results returned:",x$limit,"\n")
+cat("Number of results found:",x$found,"\n")
+}
+
+
+
