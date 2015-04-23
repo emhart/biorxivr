@@ -1,10 +1,10 @@
 ---
-title: "Using biorxiv"
+title: "Using biorxivr"
 author: "Edmund Hart"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Using biorxiv}
+  %\VignetteIndexEntry{Using biorxivr}
   %\VignetteEngine{knitr::rmarkdown}
   \usepackage[utf8]{inputenc}
 ---
@@ -14,7 +14,7 @@ vignette: >
 The search functionality comes from the general search form interface, so the search may not be at the granularity you desire without further parsing of results.  This is the equivalent of the search box on the main landing page of http://biorxiv.org
 
 ```{r searching}
-library(biorxiv)
+library(biorxivr)
 bxEco <- bx_search("Ecology",limit = 10)
 summary(bxEco)
 ```
