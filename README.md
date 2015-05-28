@@ -1,4 +1,7 @@
 
+[![Build Status](https://travis-ci.org/emhart/biorxivr.svg?branch=master)](https://travis-ci.org/emhart/biorxivr)
+[![Build status](https://ci.appveyor.com/api/projects/status/yy1hle4f3efbcpnx?svg=true)](https://ci.appveyor.com/project/emhart/biorxivr)
+
 
 ## biorxiv
 

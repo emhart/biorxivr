@@ -1,5 +1,4 @@
-environment:
-  
+
 init:
   ps: |
         $ErrorActionPreference = "Stop"
