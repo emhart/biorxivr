@@ -1,7 +1,7 @@
 Package: biorxivr
 Type: Package
 Title: Search and Download Papers from the bioRxiv Preprint Server
-Version: 0.1.0
+Version: 0.1.1
 Date: 2015-04-15
 Authors@R: c(person("Edmund", "Hart", role = c("aut","cre"),
     email = "edmund.m.hart@gmail.com"))

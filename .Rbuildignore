@@ -2,3 +2,5 @@
 ^\.Rproj\.user$
 README*
 figure/
+.travis.yml
+appveyor.yml

@@ -1,0 +1,10 @@
+biorxivr 0.1.1 
+==============
+
+MINOR IMPROVEMENTS
+
+* Error handling for plotting metrics added when no metrics are found
+
+BUG FIXES
+
+* Error extracting manuscript details when no metrics were present fixed, see issue #1

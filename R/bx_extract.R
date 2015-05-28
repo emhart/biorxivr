@@ -47,12 +47,14 @@ authors$email <- unname(unlist(meta.data[which(nlist == "citation_author_email")
   metricRes <- htmlParse(paste(bxso_url,".article-metrics"))
   ## This returns a value for each element and we'll convert it to a matrix
   metrics <- unlist(xpathApply(metricRes, "//tbody/tr/td",xmlValue))
+  ## If there are no metrics, at this point  the metrics dataframe will be null, hence this if statement
+if(!is.null(metrics)){
   metrics <- data.frame(matrix(metrics,ncol=3,nrow=length(metrics)/3, byrow=T))
   metrics[,3] <- as.numeric(as.character(metrics[,3]))
   metrics[,2] <- as.numeric(as.character(metrics[,2]))
 metrics[,1] <- do.call(c,lapply(strsplit(as.character(metrics[,1])," "),function(x) {as.Date(strptime(paste(paste(x,collapse="-"),"01",sep="-"),"%b-%Y-%d"))}))
   colnames(metrics) <- c("date","Abstract","PDF")
-
+}
   
     
 return(structure(list(authors = authors, paper = paper, metrics = metrics),class = "biorxiv_paper"))
@@ -67,6 +69,10 @@ return(structure(list(authors = authors, paper = paper, metrics = metrics),class
 #' @export
 plot.biorxiv_paper <- function(x,type="abs",...){
   bxp <- x
+
+  if(is.null(bxp$metrics)){          
+    stop("There are no metrics available for this manuscript")
+  }
   if(type=="abs"){
     plot(bxp$metrics$date,bxp$metrics$Abstract,main = "Number of Abstract views",xlab="Date",ylab="Number of views")
     lines(bxp$metrics$date,bxp$metrics$Abstract)
