@@ -1,6 +1,8 @@
+
+
 ## biorxiv
 
-##### *Quickly search and get details about papers on the pre-print server [biorxiv.org](http://www.biorxiv.org) in R*
+*Quickly search and get details about papers on the pre-print server [biorxiv.org](http://www.biorxiv.org) in R*
 
 **Quick Start**
 
@@ -9,6 +11,13 @@ Currently the package is only available on github and installable via `devtools`
 ```r
 library(devtools)
 install_github("emhart/biorxiv")
+```
+
+```
+## Error in download(dest, src, auth): client error: (404) Not Found
+```
+
+```r
 library(biorxiv)
 ```
 
@@ -25,7 +34,7 @@ summary(bxEco)
 ```
 ## Search term: Ecology 
 ## Number of results returned: 10 
-## Number of results found: 110
+## Number of results found: 145
 ```
 
 This will return a search results object that has the URL's for your search results.  If you want to get details about all your search results we can extract basic features like DOI, Authors, e-mails, title, abstract text, date as well as metrics on views and downloads.
@@ -33,51 +42,56 @@ This will return a search results object that has the URL's for your search resu
 
 ```r
 bxEcoDetails <-  bx_extract(bxEco)
+```
 
+```
+## Error in matrix(metrics, ncol = 3, nrow = length(metrics)/3, byrow = T): 'data' must be of a vector type, was 'NULL'
+```
+
+```r
 bxEcoDetails[[1]]
 ```
 
 ```
 ## $authors
 ## $authors$names
-## [1] "Stefan Siebert"          "Freya E. Goetz"         
-## [3] "Samuel H. Church"        "Pathikrit Bhattacharyya"
-## [5] "Felipe Zapata"           "Steven H.D. Haddock"    
-## [7] "Casey W. Dunn"          
+##  [1] "Peter Søgaard Jørgensen " "Frédéric Barraquand "    
+##  [3] "Vincent Bonhomme "        "Timothy J Curran "       
+##  [5] "Ellen Cieraad "           "Thomas Ezard "           
+##  [7] "Laureano Gherardi "       "R. Andrew Hayes "        
+##  [9] "Timothée Poisot "         "Roberto Salguero-Gómez " 
+## [11] "Lucía DeSoto "            "Brian Swartz "           
+## [13] "Jennifer M. Talbot "      "Brian Wee "              
+## [15] "Naupaka Zimmerman "      
+## 
+## $authors$email
+## [1] "psjoergensen@gmail.com"
 ## 
 ## 
 ## $paper
 ## $paper$title
-## [1] "Stem cells in a colonial animal with localized growth zones"
+## [1] "Connecting people and ideas from around the world: global innovation platforms for next-generation ecology and beyond"
 ## 
 ## $paper$abstract
-## [1] "Siphonophores (Hydrozoa) have unparalleled colony-level complexity, precision of organization, and functional specialization between zooids (i.e., the units that make up colonies). Previous work has shown that, unlike other colonial animals, most growth in siphonophores is restricted to one or two well-defined growth zones that are the sites of both elongation and zooid budding. To understand this unique growth at the cellular level, we characterize the distribution of interstitial stem cells (i-cells) in the siphonophore Nanomia bijuga. Within the colony we find that i-cells are present at the tips of the growth zones, at well-defined sites where new zooid buds will arise, and in the youngest zooid buds. As each zooid matures, i-cells become progressively restricted to specific regions until they are mostly absent from the oldest zooids. We find no evidence of the migratory i-cells that have been observed in colonial cnidarian relatives. The restriction of i-cells to particular developing structures and sites of growth suggest a plant-like model of growth for siphonophores, where the growth zones function much like meristems. This spatial restriction of stem cells could also explain the precision of colony-level organization in siphonophores as a consequence of restricted growth potential."
+## [1] "We present a case for using global community innovation platforms (GCIPs), an approach to improve innovation and knowledge exchange in international scientific communities through a common and open online infrastructure. We highlight the value of GCIPs by focusing on recent efforts targeting the ecological sciences, where GCIPs are of high relevance given the urgent need for interdisciplinary, geographical, and cross-sector collaboration to cope with growing challenges to the environment as well as the scientific community itself. Amidst the emergence of new international institutions, organizations, and dedicated meetings, GCIPs provide a stable international infrastructure for rapid and long-term coordination that can be accessed by any individual. The accessibility can be particularly important for researchers early in their careers. Recent examples of early career GCIPs complement an array of existing options for early career scientists to improve skill sets, increase academic and social impact, and broaden career opportunities. In particular, we provide a number of examples of existing early career initiatives that incorporate elements from the GCIPs approach, and highlight an in-depth case study from the ecological sciences: the International Network of Next-Generation Ecologists (INNGE), initiated in 2010 with support from the International Association for Ecology and 18 member institutions from six continents."
 ## 
 ## $paper$date
-## [1] "2014-01-06"
+## [1] "2014-12-14"
 ## 
 ## $paper$DOI
-## [1] "10.1101/001685"
+## [1] "10.1101/012666"
 ## 
 ## $paper$fulltext_url
-## [1] "http://www.biorxiv.org/content/biorxiv/early/2014/01/06/001685.full.pdf"
+## [1] "http://www.biorxiv.org/content/early/2014/12/14/012666.full.pdf"
 ## 
 ## 
 ## $metrics
-##          date Abstract PDF
-## 1  2014-01-01      202  99
-## 2  2014-02-01      250  71
-## 3  2014-03-01       39  27
-## 4  2014-04-01       70  22
-## 5  2014-05-01       79  35
-## 6  2014-06-01       46  46
-## 7  2014-07-01       69  45
-## 8  2014-08-01       35  12
-## 9  2014-09-01       62  18
-## 10 2014-10-01       56  46
-## 11 2014-11-01       61  22
-## 12 2014-12-01       57  21
-## 13 2015-01-01       38  13
+##         date Abstract PDF
+## 1 2014-12-01      348  26
+## 2 2015-01-01      178  39
+## 3 2015-02-01       68  49
+## 4 2015-03-01       42  19
+## 5 2015-04-01        5   1
 ## 
 ## attr(,"class")
 ## [1] "biorxiv_paper"
