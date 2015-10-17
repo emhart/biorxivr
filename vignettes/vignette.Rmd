@@ -19,6 +19,10 @@ bxEco <- bx_search("Ecology",limit = 10)
 summary(bxEco)
 ```
 
+```{r hidden,echo=F}
+bxEco <- bx_search("Gotelli and Hart",limit = 10)
+```
+
 This will return a search results object that has the URL's for your search results.  If you want to get details about all your search results we can extract basic features like DOI, Authors, e-mails, title, abstract text, date as well as metrics on views and downloads.
 
 ```{r get details}
