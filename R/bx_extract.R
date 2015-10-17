@@ -67,6 +67,7 @@ return(structure(list(authors = authors, paper = paper, metrics = metrics),class
 #' @param type the data to plot, 'abs' for abstract views, 'dl' for PDF downloads
 #' @param ... extra parameters to pass
 #' @export
+#' @importFrom graphics plot line
 plot.biorxiv_paper <- function(x,type="abs",...){
   bxp <- x
 

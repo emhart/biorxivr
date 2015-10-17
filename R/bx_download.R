@@ -8,6 +8,7 @@
 #' bx_download(bxEco,"~/biorxivPDF)
 #' }
 #' @export
+#' @importFrom utils download.file
 
 
 bx_download <- function(bxso, directory, create = TRUE){

@@ -11,6 +11,7 @@
 #' @return a list with the following elements: a vector of URL's for bioRxiv papers from the search terms,and the maximum number of results
 #' @export
 #' @import XML
+#' @importFrom utils URLencode
 
 bx_search <- function(query, limit = 10){
   base <- "http://www.biorxiv.org/search/"
